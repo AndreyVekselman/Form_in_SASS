@@ -1,0 +1,61 @@
+@import "reset";
+
+$FontFamily: Arial, Helvetica, sans-serif;
+$FontSize: 25px;
+$TextColor: white;
+
+@mixin BorderRadius($rad) {
+  border-radius: $rad;
+}
+
+@mixin Btn($color) {
+  text-align: center;
+  width: 253px;
+  height: 70px;
+  margin-top: 25px;
+  @include BorderRadius(20px);
+  background-color: $color;
+  margin-left: 20px;
+  color: $TextColor;
+  font-size: $FontSize - 2;
+  float: left;
+}
+
+.main {
+  width: 600px;
+  height: 800px;
+  color: $TextColor;
+  margin: auto;
+  margin-top: 80px;
+  font-family: $FontFamily;
+  .form {
+    padding-left: 20px;
+    padding-top: 10px;
+    background-color: rgba(153, 193, 216, 255);
+    height: 700px;
+    background-image: linear-gradient(
+      180deg,
+      rgba(147, 189, 213, 255),
+      rgba(182, 214, 232, 255)
+    );
+    label {
+      font-size: $FontSize;
+    }
+    input {
+      padding-left: 20px;
+      font-size: $FontSize;
+      margin: 10px 0;
+      width: 560px;
+      height: 53px;
+      @include BorderRadius(10px);
+      border-style: none;
+      box-sizing: border-box;
+    }
+  }
+  .Btn_OK {
+    @include Btn(green);
+  }
+  .Btn_Error {
+    @include Btn(red);
+  }
+}
